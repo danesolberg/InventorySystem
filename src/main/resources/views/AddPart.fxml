@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddPartController">
+   <children>
+      <Label layoutX="45.0" layoutY="65.0" text="Add Part">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="inHouseRadioButton" layoutX="177.0" layoutY="64.0" mnemonicParsing="false" onAction="#selectPartType" text="In-House" />
+      <RadioButton fx:id="outsourcedRadioButton" layoutX="307.0" layoutY="64.0" mnemonicParsing="false" onAction="#selectPartType" text="Outsourced" />
+      <HBox layoutX="89.0" layoutY="157.0" prefHeight="287.0" prefWidth="238.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+               <children>
+                  <Label text="ID" />
+                  <Label text="Name" />
+                  <Label text="Inv" />
+                  <Label text="Price/Cost" />
+                  <Label text="Max" />
+                  <Label fx:id="dynamicIdLabel" text="Machine ID" />
+               </children>
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="125.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="partIdTextField" disable="true" prefHeight="26.0" text="Auto Gen- Disabled">
+                     <font>
+                        <Font name="Arial Italic" size="11.0" />
+                     </font></TextField>
+                  <TextField fx:id="partNameTextField" />
+                  <TextField fx:id="partInventoryTextField" />
+                  <TextField fx:id="partPriceTextField" />
+                  <TextField fx:id="partMaxTextField" />
+                  <TextField fx:id="dynamicIdTextField" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Label layoutX="337.0" layoutY="313.0" text="Min" />
+      <TextField fx:id="partMinTextField" layoutX="370.0" layoutY="304.0" prefHeight="27.0" prefWidth="112.0" />
+      <Button layoutX="325.0" layoutY="401.0" mnemonicParsing="false" onAction="#save" text="Save" />
+      <Button layoutX="384.0" layoutY="401.0" mnemonicParsing="false" onAction="#switchToHome" text="Cancel" />
+   </children>
+</AnchorPane>
